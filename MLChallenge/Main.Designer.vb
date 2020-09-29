@@ -23,11 +23,9 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RTBody = New System.Windows.Forms.RichTextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSend = New System.Windows.Forms.Button()
         Me.TBSubject = New System.Windows.Forms.TextBox()
         Me.TBTo = New System.Windows.Forms.TextBox()
@@ -47,14 +45,17 @@ Partial Class Main
         Me.MLChallengeDataSet = New MLChallenge.MLChallengeDataSet()
         Me.InboxTableAdapter = New MLChallenge.MLChallengeDataSetTableAdapters.inboxTableAdapter()
         Me.TableAdapterManager = New MLChallenge.MLChallengeDataSetTableAdapters.TableAdapterManager()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.RTBody = New System.Windows.Forms.RichTextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Received = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.From = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Subject = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Received = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.body = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,8 +82,13 @@ Partial Class Main
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.GroupBox2)
-        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.RTBody)
+        Me.TabPage1.Controls.Add(Me.BtnSend)
+        Me.TabPage1.Controls.Add(Me.TBSubject)
+        Me.TabPage1.Controls.Add(Me.TBTo)
+        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -91,80 +97,55 @@ Partial Class Main
         Me.TabPage1.Text = "Nuevo Email"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.RTBody)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 115)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(790, 219)
-        Me.GroupBox2.TabIndex = 0
-        Me.GroupBox2.TabStop = False
-        '
-        'RTBody
-        '
-        Me.RTBody.Location = New System.Drawing.Point(6, 12)
-        Me.RTBody.Name = "RTBody"
-        Me.RTBody.Size = New System.Drawing.Size(778, 194)
-        Me.RTBody.TabIndex = 0
-        Me.RTBody.Text = ""
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.BtnSend)
-        Me.GroupBox1.Controls.Add(Me.TBSubject)
-        Me.GroupBox1.Controls.Add(Me.TBTo)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(790, 103)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        '
         'BtnSend
         '
-        Me.BtnSend.Location = New System.Drawing.Point(513, 29)
+        Me.BtnSend.Location = New System.Drawing.Point(666, 37)
         Me.BtnSend.Name = "BtnSend"
         Me.BtnSend.Size = New System.Drawing.Size(115, 50)
-        Me.BtnSend.TabIndex = 2
+        Me.BtnSend.TabIndex = 3
         Me.BtnSend.Text = "Enviar"
         Me.BtnSend.UseVisualStyleBackColor = True
         '
         'TBSubject
         '
-        Me.TBSubject.Location = New System.Drawing.Point(77, 59)
+        Me.TBSubject.Location = New System.Drawing.Point(79, 67)
         Me.TBSubject.Name = "TBSubject"
-        Me.TBSubject.Size = New System.Drawing.Size(430, 20)
+        Me.TBSubject.Size = New System.Drawing.Size(581, 20)
         Me.TBSubject.TabIndex = 1
         '
         'TBTo
         '
-        Me.TBTo.Location = New System.Drawing.Point(54, 29)
+        Me.TBTo.Location = New System.Drawing.Point(56, 37)
         Me.TBTo.Name = "TBTo"
-        Me.TBTo.Size = New System.Drawing.Size(453, 20)
+        Me.TBTo.Size = New System.Drawing.Size(604, 20)
         Me.TBTo.TabIndex = 0
         Me.TBTo.Text = "lucasmartinbschallenge@gmail.com"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 63)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(16, 71)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.Size = New System.Drawing.Size(54, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Subject:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 32)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(16, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 13)
+        Me.Label1.Size = New System.Drawing.Size(26, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "To:"
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Controls.Add(Me.Button1)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -180,9 +161,9 @@ Partial Class Main
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.DataGridView1)
-        Me.GroupBox3.Location = New System.Drawing.Point(22, 14)
+        Me.GroupBox3.Location = New System.Drawing.Point(22, 49)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(758, 312)
+        Me.GroupBox3.Size = New System.Drawing.Size(758, 277)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         '
@@ -194,11 +175,11 @@ Partial Class Main
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.From, Me.Subject, Me.Received, Me.body})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Received, Me.From, Me.Subject, Me.body})
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(752, 293)
+        Me.DataGridView1.Size = New System.Drawing.Size(752, 258)
         Me.DataGridView1.TabIndex = 1
         '
         'TabPage3
@@ -235,6 +216,14 @@ Partial Class Main
         Me.InboxDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.InboxDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.InboxDataGridView.DataSource = Me.InboxBindingSource
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.InboxDataGridView.DefaultCellStyle = DataGridViewCellStyle6
         Me.InboxDataGridView.Location = New System.Drawing.Point(3, 16)
         Me.InboxDataGridView.Name = "InboxDataGridView"
         Me.InboxDataGridView.ReadOnly = True
@@ -294,13 +283,49 @@ Partial Class Main
         Me.TableAdapterManager.inboxTableAdapter = Me.InboxTableAdapter
         Me.TableAdapterManager.UpdateOrder = MLChallenge.MLChallengeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(317, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(168, 27)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Actualizar bandeja de entrada "
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'RTBody
+        '
+        Me.RTBody.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RTBody.Location = New System.Drawing.Point(19, 122)
+        Me.RTBody.Name = "RTBody"
+        Me.RTBody.Size = New System.Drawing.Size(762, 198)
+        Me.RTBody.TabIndex = 2
+        Me.RTBody.Text = ""
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(16, 98)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(58, 13)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Mensaje:"
+        '
+        'Received
+        '
+        Me.Received.HeaderText = "Received"
+        Me.Received.Name = "Received"
+        Me.Received.ReadOnly = True
+        Me.Received.Width = 78
+        '
         'From
         '
-        Me.From.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.From.HeaderText = "From"
         Me.From.Name = "From"
         Me.From.ReadOnly = True
-        Me.From.Width = 55
+        Me.From.Width = 150
         '
         'Subject
         '
@@ -310,20 +335,32 @@ Partial Class Main
         Me.Subject.ReadOnly = True
         Me.Subject.Width = 68
         '
-        'Received
-        '
-        Me.Received.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Received.HeaderText = "Received"
-        Me.Received.Name = "Received"
-        Me.Received.ReadOnly = True
-        Me.Received.Width = 78
-        '
         'body
         '
-        Me.body.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.body.HeaderText = "Body"
+        Me.body.MinimumWidth = 600
         Me.body.Name = "body"
         Me.body.ReadOnly = True
+        Me.body.Width = 600
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(612, 24)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(13, 12)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = " "
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(627, 24)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(153, 13)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Contiene la palabra ""DevOps"" "
         '
         'Main
         '
@@ -338,10 +375,9 @@ Partial Class Main
         Me.Text = "Main"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
@@ -355,9 +391,6 @@ Partial Class Main
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents RTBody As RichTextBox
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnSend As Button
     Friend WithEvents TBSubject As TextBox
     Friend WithEvents TBTo As TextBox
@@ -377,8 +410,13 @@ Partial Class Main
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents RTBody As RichTextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Received As DataGridViewTextBoxColumn
     Friend WithEvents From As DataGridViewTextBoxColumn
     Friend WithEvents Subject As DataGridViewTextBoxColumn
-    Friend WithEvents Received As DataGridViewTextBoxColumn
     Friend WithEvents body As DataGridViewTextBoxColumn
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
 End Class

@@ -9,8 +9,8 @@ Module Utilidades
     '*************************  PARAMETROS DE SMTP **********************************************
     '*************************  ENVIO EMAIL **********************************************
     Public SmtpClient As String = "smtp.gmail.com"
-    Public EmailFrom As String = "eposcomercial@gmail.com"
-    Public EmailFromPwd As String = "xrfgnwmshkovxwsr"
+    Public EmailFrom As String = "lucasmartinbschallenge@gmail.com"
+    Public EmailFromPwd As String = "MLChallenge"
     Public EmailPort As Integer = 587
     Public EmailTo As String
     Public EmailSubject As String

@@ -29,6 +29,7 @@ Public Class Main
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 
 
@@ -46,13 +47,13 @@ Public Class Main
         End Select
     End Sub
     Private Sub GetEmails()
+        Me.Cursor = Cursors.WaitCursor
         '************************************
         Dim inboxTableAdapter As New MLChallengeDataSetTableAdapters.inboxTableAdapter()
         '************************************
         inboxTableAdapter.truncate_table()
         '************************************
         Try
-            Me.Cursor = Cursors.WaitCursor
             DataGridView1.Rows.Clear()
             '*****************************
             Dim ClientPOP3 As New OpenPop.Pop3.Pop3Client
@@ -83,6 +84,7 @@ Public Class Main
                 If SearchInStr(message.Headers.Subject, "DevOps") Or SearchInStr(DataGridView1.Rows(Currentrow).Cells("body").Value, "DevOps") Then
                     Try
                         inboxTableAdapter.insert_message(i, message.Headers.DateSent, DataGridView1.Rows(Currentrow).Cells("From").Value, message.Headers.Subject)
+                        DataGridView1.Rows(Currentrow).DefaultCellStyle.ForeColor = Color.Red
                     Catch ex As Exception
                         MsgEx("No se pudo guardar el mensaje en la base de datos: " + ex.Message)
                     End Try
@@ -94,5 +96,9 @@ Public Class Main
             MsgEx(ex.Message)
         End Try
         Me.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        GetEmails()
     End Sub
 End Class
