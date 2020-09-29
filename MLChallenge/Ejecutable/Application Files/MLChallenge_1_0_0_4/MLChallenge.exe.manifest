@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="MLChallenge.exe" version="1.0.0.4" publicKeyToken="3a6942bdaeeef81f" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="MLChallenge" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="MLChallenge.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Opciones del manifiesto UAC
+             Si quiere cambiar el nivel del Control de cuentas de usuario de Windows reemplace el 
+             nodo requestedExecutionLevel por uno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Especificar el elemento requestedExecutionLevel deshabilitará la virtualización de archivos y registros. 
+            Quite este elemento si la aplicación necesita esta virtualización para la compatibilidad
+            con versiones anteriores.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MLChallenge.exe" size="59920">
+      <assemblyIdentity name="MLChallenge" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>yQfe8zz9HP06mMVN8v5hhS1Z6eB+FL+ZA5PC2f5JQ+A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="457728">
+      <assemblyIdentity name="MySql.Data" version="6.9.8.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>vZOt5pn+YIjqzABheL5YRnsrxRe1pFgyD4tfa0entVA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OpenPop.dll" size="69632">
+      <assemblyIdentity name="OpenPop" version="2.0.5.0" publicKeyToken="BEBB5741791313CD" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fzTy4+cfbx2sAvfhZr/XW7BwgRkSHdO2vOVR4k1cSgY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="MLChallenge.exe.config" size="551">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>q+OXEhWYmTI57xNvrB6IslrJ9/1OVBA3kfD4EBMx+eA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Una lista de las versiones de Windows en la que se ha probado esta aplicación y
+           con la que se ha diseñado para que trabaje. Quite la marca de comentario de los elementos adecuados y Windows seleccionará 
+           automáticamente el entorno más compatible. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=LUCASMARTINBS-N\lucasmartinbs" issuerKeyHash="6180924a54a9b613c26aadc9ae275bccb0ccb48e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>EmlsMm7NyepGqGxwAC1V5uT6zh1VJ6clWOzK283Gs78=</DigestValue></Reference></SignedInfo><SignatureValue>Po9+ewKs68HO89rI/63b0HqW0Fciq+U9Nk/uV7QoerrjL0cUIevbbYBY8ynkwpECrbxOB5AbpeM/FUrLYRAOMezAD+Q2BWxdA5w89cJnuK6gx/CpFvjo8B5mx1+3KxjutDjR05pfRSojsMdZGoPieI3naSDTARUNZvc/I0uVFso=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qaaHjjvCXgKdXGVDk+d4GTel395kM1uB1GYYe094n6jJPAz1UlYF1+gjv42RJOAp9IMOjVHgKFRrn8zq3p3B2Rgv9rPY9qfwwmt0Grnby9QgZ07tOYKHbR97WcELfBm+ezxJ5PljvvPhsBd4D4UrMagi2VXEQZKRk/B6tzPM0xk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="bfb3c6cddbcaec5825a727551dcefae4e6552d00706ca846eac9cd6e326c6912" Description="" Url=""><as:assemblyIdentity name="MLChallenge.exe" version="1.0.0.4" publicKeyToken="3a6942bdaeeef81f" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LUCASMARTINBS-N\lucasmartinbs</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>LcCVkDRPk8pnfIoIvkdj4n38mKewhid6xGJL+HlnjZQ=</DigestValue></Reference></SignedInfo><SignatureValue>DkhwSPURwYyzhYY4j3w05vVHbuif5S9qdYuQlhFy7NPIX1kgXnccmUq+opRe5SqhUcX4OxL3CJ2YGEVnztcZ56BwzFtZHGgDOY68rHTTLUHcWIoYw0GOkch52JBedJFVhKrHnykLzfsh7M5enTGGdg2iHXp6rV+iWj8inRUlZxQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qaaHjjvCXgKdXGVDk+d4GTel395kM1uB1GYYe094n6jJPAz1UlYF1+gjv42RJOAp9IMOjVHgKFRrn8zq3p3B2Rgv9rPY9qfwwmt0Grnby9QgZ07tOYKHbR97WcELfBm+ezxJ5PljvvPhsBd4D4UrMagi2VXEQZKRk/B6tzPM0xk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICDTCCAXagAwIBAgIQJtmLrYk79KNBecfz8ZfJrTANBgkqhkiG9w0BAQsFADBFMUMwQQYDVQQDHjoATABVAEMAQQBTAE0AQQBSAFQASQBOAEIAUwAtAE4AXABsAHUAYwBhAHMAbQBhAHIAdABpAG4AYgBzMB4XDTIwMDkyOTE1MDUxMloXDTIxMDkyOTIxMDUxMlowRTFDMEEGA1UEAx46AEwAVQBDAEEAUwBNAEEAUgBUAEkATgBCAFMALQBOAFwAbAB1AGMAYQBzAG0AYQByAHQAaQBuAGIAczCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAqaaHjjvCXgKdXGVDk+d4GTel395kM1uB1GYYe094n6jJPAz1UlYF1+gjv42RJOAp9IMOjVHgKFRrn8zq3p3B2Rgv9rPY9qfwwmt0Grnby9QgZ07tOYKHbR97WcELfBm+ezxJ5PljvvPhsBd4D4UrMagi2VXEQZKRk/B6tzPM0xkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBGnyJK4i7c96EQTxdYIAb5u6warrYbjjkVGQnicokcEjjRCzw9pkDHNpSPyapjrZML5/AGuK5Xjj7O50vhJuVN8+wib68G+lLZV4S4x0Jl8MtBOrGNtPZZcXVLdehK7bU/lF1U3a1l/85dy0Tmu6WX3piyI5mrA33/pq7PpMhLog==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
